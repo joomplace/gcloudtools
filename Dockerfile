@@ -6,4 +6,5 @@ RUN apk add --update make ca-certificates openssl python zip; \
 # Download and install Google Cloud SDK
 RUN wget https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz; \
     tar -zxf google-cloud-sdk.tar.gz && ./google-cloud-sdk/install.sh --usage-reporting=false --path-update=true; \
+    rm -f google-cloud-sdk.tar.gz; \
     google-cloud-sdk/bin/gcloud --quiet components update
